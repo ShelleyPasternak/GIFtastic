@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>GIFtastic</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+
+<body>
+
+<!--create buttons-->
+
+<!--create input form-->
+  
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-secondary" id="parkButton">Florida Everglades</button>
+    <button type="button" class="btn btn-secondary" id="parkButton">Yosemite</button>
+    <button type="button" class="btn btn-secondary" id="parkButton">Big Bend</button>
+  </div>
+
+<form id="parkForm">
+    <label for="parkInput">Add a national park here</label>
+    <input type="text" id="parkInput"><br>
+</form>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    
+//create way to get giphy from buttons above
+
+//create function to search in giphy for national parks
+
+//append search item with new button
+
+$(document).ready(function(){
+    var nationalPark = $(this).data("parkInput");
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + "parkInput" +" &api_key=dc6zaTOxFJmzC";
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function(response) {
+    var newButton = $("<parkInput>")
+    newButton.append(parkButton)
+    });
+})
+
+  </script>
+
+</body>
+
+</html>
